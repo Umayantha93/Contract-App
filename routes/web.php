@@ -31,6 +31,11 @@ Route::middleware('auth')->group(function () {
 
 Route::controller(PersonContrller::class)->prefix('person')->name('person')->middleware('auth')->group(function(){
     Route::get('/', 'index')->name('.index');
+    Route::get('/create', 'create')->name('.create');
+    Route::post('/store', 'store')->name('.store');
+    Route::get('/{person}/edit', 'edit')->name('.edit');
+    Route::put('/{person}/update', 'update')->name('.update');
+    Route::delete('/{person}/destroy', 'destroy')->name('.destroy');
 });
 
 require __DIR__.'/auth.php';
