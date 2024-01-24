@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Person;
 use Illuminate\Http\Request;
 
 class PersonContrller extends Controller
@@ -11,7 +12,7 @@ class PersonContrller extends Controller
      */
     public function index()
     {
-        dd('test');
+        return view('person.index')->with('people', Person::all());
     }
 
     /**
